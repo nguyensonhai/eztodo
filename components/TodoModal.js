@@ -1,4 +1,5 @@
 import React from 'react'
+import * as Font from 'expo-font';
 import { Text, StyleSheet, View, SafeAreaView, TouchableOpacity, FlatList, TextInput, Keyboard } from 'react-native'
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 import colors from '../shared/Colors';
@@ -114,22 +115,24 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 30,
-        fontWeight: 'bold',
+        fontFamily: 'quicksand-bold',
         color: colors.black,
     },
     taskCount: {
         marginTop: 4,
         marginBottom: 16,
         color: colors.gray,
-        fontWeight: '600',
+        fontFamily: 'quicksand-regular',
 
     },
     footer: {
+        fontFamily: 'quicksand-regular',
         paddingHorizontal: 32,
         flexDirection: 'row',
         alignItems: 'center',
     },
     input: {
+        fontFamily: 'quicksand-regular',
         flex: 1,
         height: 48,
         borderWidth: StyleSheet.hairlineWidth,
@@ -149,7 +152,7 @@ const styles = StyleSheet.create({
     },
     todo: {
         color: colors.black,
-        fontWeight: 'bold',
+        fontFamily: 'quicksand-bold',
         fontSize: 16,
     }
 });

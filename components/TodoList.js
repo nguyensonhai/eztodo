@@ -66,18 +66,18 @@ const styles = StyleSheet.create({
     },
     listTitle: {
         fontSize: 24,
-        fontWeight: 'bold',
+        fontFamily: 'quicksand-bold',
         color: colors.white,
         marginBottom: 18,
     },
     count: {
         fontSize: 45,
-        fontWeight: 'normal',
+        fontFamily: 'quicksand-regular',
         color: colors.white,
     },
     subtitle: {
         fontSize: 12,
-        fontWeight: 'bold',
+        fontFamily: 'quicksand-regular',
         color: colors.white,
     }
 });

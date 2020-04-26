@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Font from 'expo-font';
 import { StyleSheet, Text, View, TouchableOpacity, FlatList, Modal, ActivityIndicator } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import colors from './shared/Colors';
@@ -6,6 +7,11 @@ import tempData from './shared/TempData';
 import TodoList from './components/TodoList';
 import AddListModal from './components/AddListModal';
 import Fire from './shared/Fire';
+
+const getFonts = () => Font.loadAsync({
+  'quicksand-regular': require('./assets/fonts/Quicksand-Regular.ttf'),
+  'quicksand-bold': require('./assets/fonts/Quicksand-Bold.ttf'),
+});
 
 export default class App extends React.Component {
   state = {
@@ -57,6 +63,7 @@ export default class App extends React.Component {
 
   render() {
     if(this.state.loading) {
+      getFonts();
       return (
         <View style={styles.container} >
           <ActivityIndicator size='large' color={colors.green}/>
@@ -74,7 +81,7 @@ export default class App extends React.Component {
         <View style={{ flexDirection: 'row' }}>
           <View style={styles.divider} />
           <Text style={styles.title}>
-            Todo <Text style={{ fontWeight: '300', color: colors.green }}>Lists</Text>
+            Todo <Text style={{ fontFamily: 'quicksand-regular', color: colors.green }}>Lists</Text>
           </Text>
           <View style={styles.divider} />
         </View>
@@ -113,12 +120,13 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   title: {
-    fontWeight: 'bold',
+    fontFamily: 'quicksand-bold',
     fontSize: 38,
     color: colors.black,
     paddingHorizontal: 64,
   },
   addList: {
+    fontFamily: 'quicksand-regular',
     borderWidth: 2,
     borderColor: colors.lightGreen,
     borderRadius: 4,
@@ -128,7 +136,7 @@ const styles = StyleSheet.create({
   },
   add: {
     color: colors.green,
-    fontWeight: '600',
+    fontFamily: 'quicksand-regular',
     fontSize: 14,
     marginTop: 8,
   }

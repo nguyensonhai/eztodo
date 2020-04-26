@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, TextInput } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import colors from '../shared/Colors';
-import tempData from '../shared/TempData';
 
 export default class AddListModal extends React.Component {
 
@@ -25,12 +24,12 @@ export default class AddListModal extends React.Component {
         })
     };
 
-    createTodo =  () => {
-        const {name, color} = this.state;
-        const list = {name, color};
+    createTodo = () => {
+        const { name, color } = this.state;
+        const list = { name, color };
 
         this.props.addList(list);
-        this.setState({name: ''});
+        this.setState({ name: '' });
         this.props.closeModal();
     };
 
@@ -49,7 +48,7 @@ export default class AddListModal extends React.Component {
                 </TouchableOpacity>
 
                 <View style={{ alignSelf: 'stretch', marginHorizontal: 32 }}>
-                    <Text style={styles.title}>Create <Text style={[styles.todo, { color: this.state.color }] }>Todo</Text> List</Text>
+                    <Text style={styles.title}>Create <Text style={[styles.todo, { color: this.state.color, fontFamily: 'quicksand-bold' }]}>Todo</Text> List</Text>
                     <TextInput
                         style={[styles.input, { borderColor: this.state.color }]}
                         placeholder='List name'
@@ -61,7 +60,7 @@ export default class AddListModal extends React.Component {
                     <TouchableOpacity
                         style={[styles.create, { backgroundColor: this.state.color }]}
                         onPress={this.createTodo} >
-                        <Text style={{ color: colors.white, fontWeight: '600' }}>CREATE </Text>
+                        <Text style={{ color: colors.white, fontFamily: 'quicksand-bold' }}>CREATE </Text>
                     </TouchableOpacity>
                 </View>
             </KeyboardAvoidingView>
@@ -74,15 +73,17 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        fontFamily: 'quicksand-regular',
     },
     title: {
         fontSize: 38,
-        fontWeight: 'bold',
+        fontFamily: 'quicksand-regular',
         color: colors.black,
         alignSelf: 'center',
         marginBottom: 16,
     },
     input: {
+        fontFamily: 'quicksand-regular',
         borderWidth: StyleSheet.hairlineWidth,
         borderRadius: 6,
         height: 50,
