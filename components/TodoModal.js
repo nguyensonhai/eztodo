@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, StyleSheet, View, SafeAreaView, TouchableOpacity, FlatList, KeyboardAvoidingView, TextInput, Keyboard } from 'react-native'
+import { Text, StyleSheet, View, SafeAreaView, TouchableOpacity, FlatList, TextInput, Keyboard } from 'react-native'
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 import colors from '../shared/Colors';
 export default class TodoModal extends React.Component {

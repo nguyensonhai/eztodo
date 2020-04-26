@@ -51,7 +51,7 @@ export default class AddListModal extends React.Component {
                 <View style={{ alignSelf: 'stretch', marginHorizontal: 32 }}>
                     <Text style={styles.title}>Create <Text style={[styles.todo, { color: this.state.color }] }>Todo</Text> List</Text>
                     <TextInput
-                        style={styles.input}
+                        style={[styles.input, { borderColor: this.state.color }]}
                         placeholder='List name'
                         onChangeText={text => this.setState({ name: text })}
                     />
@@ -84,7 +84,6 @@ const styles = StyleSheet.create({
     },
     input: {
         borderWidth: StyleSheet.hairlineWidth,
-        borderColor: colors.green,
         borderRadius: 6,
         height: 50,
         marginTop: 8,
