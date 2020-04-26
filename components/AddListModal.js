@@ -5,7 +5,7 @@ import colors from '../shared/Colors';
 
 export default class AddListModal extends React.Component {
 
-    backgroundColors = ['#86E3CE', '#24A6D9', '#595BD9', '#8022D9', '#D159D8', '#D85963', '#D88559'];
+    backgroundColors = ['#86E3CE', '#80D2F2', '#DEADFF', '#FFBDE3', '#D85963', '#F29979', '#FFF08A', '#BFBFBF', '#333333'];
 
     state = {
         name: '',
@@ -50,8 +50,9 @@ export default class AddListModal extends React.Component {
                 <View style={{ alignSelf: 'stretch', marginHorizontal: 32 }}>
                     <Text style={styles.title}>Create <Text style={[styles.todo, { color: this.state.color, fontFamily: 'quicksand-bold' }]}>Todo</Text> List</Text>
                     <TextInput
+                        selectionColor={this.state.color}
                         style={[styles.input, { borderColor: this.state.color }]}
-                        placeholder='List name'
+                        placeholder='Type list name...'
                         onChangeText={text => this.setState({ name: text })}
                     />
 
@@ -59,7 +60,8 @@ export default class AddListModal extends React.Component {
 
                     <TouchableOpacity
                         style={[styles.create, { backgroundColor: this.state.color }]}
-                        onPress={this.createTodo} >
+                        onPress={this.createTodo}
+                    >
                         <Text style={{ color: colors.white, fontFamily: 'quicksand-bold' }}>CREATE </Text>
                     </TouchableOpacity>
                 </View>
@@ -94,7 +96,6 @@ const styles = StyleSheet.create({
     todo: {
         fontSize: 38,
         fontWeight: 'bold',
-        color: colors.green,
         alignSelf: 'center',
         marginBottom: 16,
     },
@@ -104,7 +105,6 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: colors.green,
     },
     colorSelect: {
         width: 30,
