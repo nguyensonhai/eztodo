@@ -15,13 +15,14 @@ export default class TodoModal extends React.Component {
 
     addTodo = () => {
         let list = this.props.list;
-        list.todos.push({ title: this.state.newTodo, completed: false });
+        list.todos.push({title: this.state.newTodo, completed: false});
+
         this.props.updateList(list);
-        this.setState({ newTodo: '' });
+        this.setState({newTodo: ''});
         Keyboard.dismiss();
     }
 
-    renderTodo = (todo, index) => {
+    renderTodo = (todo, index )=> {
         return (
             <View style={styles.todoContainer}>
                 <TouchableOpacity onPress={() => this.toggleTodoCompleted(index)}>
@@ -68,7 +69,7 @@ export default class TodoModal extends React.Component {
                         <FlatList
                             data={list.todos}
                             renderItem={({ item, index }) => this.renderTodo(item, index)}
-                            keyExtractor={item => item.id}
+                            keyExtractor={item => item.name}
                             contentContainerStyle={{ paddingHorizontal: 32, paddingVertical: 64 }}
                             showsVerticalScrollIndicator={false}
                             keyboardShouldPersistTaps='always'
@@ -77,12 +78,12 @@ export default class TodoModal extends React.Component {
                     <View style={[styles.section, styles.footer]}>
                         <TextInput
                             style={[styles.input, { borderColor: list.color }]}
-                            onChangeText={text => this.setState({ newTodo: text })}
+                            onChangeText={text=>this.setState({newTodo: text})}
                             value={this.state.newTodo}
                         />
                         <TouchableOpacity
-                            style={[styles.addTodo, { backgroundColor: list.color }]}
-                            onPress={() => this.addTodo()}
+                            style={[styles.addTodo, { backgroundColor: list.color }]} 
+                            onPress={() => this.addTodo()}    
                         >
                             <AntDesign
                                 name='plus'
