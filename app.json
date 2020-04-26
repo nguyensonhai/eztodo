@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "eztodo",
-    "slug": "eztodo",
+    "name": "Ez Todo",
+    "slug": "ez-todo",
     "platforms": [
       "ios",
       "android",
@@ -23,6 +23,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Created by NERØ",
+    "githubUrl": "https://github.com/nguyensonhai/eztodo"
   }
 }
