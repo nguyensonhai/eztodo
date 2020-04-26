@@ -1,5 +1,4 @@
 import React from 'react'
-import * as Font from 'expo-font';
 import { Text, StyleSheet, View, SafeAreaView, TouchableOpacity, FlatList, TextInput, Keyboard } from 'react-native'
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 import colors from '../shared/Colors';
