@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import colors from './shared/colors';
+import colors from './shared/Colors';
+import tempData from './shared/TempData';
+import TodoList from './components/TodoList';
 
 export default class App extends React.Component {
   render() {
@@ -10,7 +12,7 @@ export default class App extends React.Component {
         <View style={{ flexDirection: 'row' }}>
           <View style={styles.divider} />
           <Text style={styles.title}>
-            Todo <Text style={{ fontWeight: '300', color: colors.green }}>Lists</Text>
+            Todo <Text style={{ fontWeight: '300', color: colors.green  }}>Lists</Text>
           </Text>
           <View style={styles.divider} />
         </View>
@@ -19,6 +21,15 @@ export default class App extends React.Component {
             <AntDesign name='plus' size={16} color={colors.green} />
           </TouchableOpacity>
           <Text style={styles.add}>Add list</Text>
+        </View>
+        <View style={{height: 275, paddingLeft: 32}}>
+          <FlatList
+            data={tempData}
+            keyExtractor={item => item.name}
+            horizontal={true}
+            showsVerticalScrollIndicator={false}
+            renderItem={({item}) => <TodoList list={item}/>}
+          />
         </View>
       </View>
     )
@@ -39,8 +50,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   title: {
+    fontWeight: 'bold',
     fontSize: 38,
-    fontWeight: '800',
     color: colors.black,
     paddingHorizontal: 64,
   },
