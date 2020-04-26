@@ -5,11 +5,20 @@ import colors from './shared/Colors';
 import tempData from './shared/TempData';
 import TodoList from './components/TodoList';
 import AddListModal from './components/AddListModal';
+import Fire from './shared/Fire';
 
 export default class App extends React.Component {
   state = {
     addTodoVisible: false,
     lists: tempData
+  }
+
+  componentDidMount() {
+    firebase = new Fire((error, user) => {
+      if(error) {
+        return alert('Uh oh, something went wrong!')
+      }
+    });
   }
 
   toggleAddTodoModal() {
@@ -27,7 +36,7 @@ export default class App extends React.Component {
   updateList = list => {
     this.setState({
       lists: this.state.lists.map(item => {
-        return item.id ===  list.id ? list : item;
+        return item.id === list.id ? list : item;
       })
     });
   };
