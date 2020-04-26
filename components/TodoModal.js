@@ -15,14 +15,14 @@ export default class TodoModal extends React.Component {
 
     addTodo = () => {
         let list = this.props.list;
-        list.todos.push({title: this.state.newTodo, completed: false});
-
+        list.todos.push({ title: this.state.newTodo, completed: false });
         this.props.updateList(list);
-        this.setState({newTodo: ''});
+        this.setState({ newTodo: '' });
         Keyboard.dismiss();
+
     }
 
-    renderTodo = (todo, index )=> {
+    renderTodo = (todo, index) => {
         return (
             <View style={styles.todoContainer}>
                 <TouchableOpacity onPress={() => this.toggleTodoCompleted(index)}>
@@ -48,7 +48,7 @@ export default class TodoModal extends React.Component {
         const taskCount = list.todos.length;
         const completedCount = list.todos.filter(todo => todo.completed).length;
         return (
-            <KeyboardAvoidingView style={{ flex: 1, }} >
+            <View style={{ flex: 1, }} >
                 <SafeAreaView style={styles.container}>
                     <TouchableOpacity
                         style={{ position: 'absolute', top: 24, right: 32, zIndex: 10 }}
@@ -72,18 +72,17 @@ export default class TodoModal extends React.Component {
                             keyExtractor={item => item.name}
                             contentContainerStyle={{ paddingHorizontal: 32, paddingVertical: 64 }}
                             showsVerticalScrollIndicator={false}
-                            keyboardShouldPersistTaps='always'
                         />
                     </View>
                     <View style={[styles.section, styles.footer]}>
                         <TextInput
                             style={[styles.input, { borderColor: list.color }]}
-                            onChangeText={text=>this.setState({newTodo: text})}
+                            onChangeText={text => this.setState({ newTodo: text })}
                             value={this.state.newTodo}
                         />
                         <TouchableOpacity
-                            style={[styles.addTodo, { backgroundColor: list.color }]} 
-                            onPress={() => this.addTodo()}    
+                            style={[styles.addTodo, { backgroundColor: list.color }]}
+                            onPress={() => this.addTodo()}
                         >
                             <AntDesign
                                 name='plus'
@@ -93,7 +92,7 @@ export default class TodoModal extends React.Component {
                         </TouchableOpacity>
                     </View>
                 </SafeAreaView>
-            </KeyboardAvoidingView>
+            </View>
         );
     }
 }
