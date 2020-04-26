@@ -76,6 +76,7 @@ export default class TodoModal extends React.Component {
                     </View>
                     <View style={[styles.section, styles.footer]}>
                         <TextInput
+                            selectionColor={this.state.color}
                             style={[styles.input, { borderColor: list.color }]}
                             onChangeText={text => this.setState({ newTodo: text })}
                             value={this.state.newTodo}
