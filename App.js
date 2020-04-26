@@ -66,7 +66,7 @@ export default class App extends React.Component {
       getFonts();
       return (
         <View style={styles.container} >
-          <ActivityIndicator size='large' color={colors.green}/>
+          <ActivityIndicator size='large' color={colors.black}/>
         </View>
       )
     }
@@ -81,13 +81,13 @@ export default class App extends React.Component {
         <View style={{ flexDirection: 'row' }}>
           <View style={styles.divider} />
           <Text style={styles.title}>
-            Todo <Text style={{ fontFamily: 'quicksand-regular', color: colors.green }}>Lists</Text>
+            Todo <Text style={{ fontFamily: 'quicksand-regular', color: colors.gray }}>Lists</Text>
           </Text>
           <View style={styles.divider} />
         </View>
         <View style={{ marginVertical: 48 }}>
           <TouchableOpacity style={styles.addList} onPress={() => this.toggleAddTodoModal()}>
-            <AntDesign name='plus' size={16} color={colors.green} />
+            <AntDesign name='plus' size={16} color={colors.black} />
           </TouchableOpacity>
           <Text style={styles.add}>Add list</Text>
         </View>
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   divider: {
-    backgroundColor: colors.lightGreen,
+    backgroundColor: colors.black,
     height: 1,
     flex: 1,
     alignSelf: 'center',
@@ -128,14 +128,14 @@ const styles = StyleSheet.create({
   addList: {
     fontFamily: 'quicksand-regular',
     borderWidth: 2,
-    borderColor: colors.lightGreen,
+    borderColor: colors.gray,
     borderRadius: 4,
     padding: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
   add: {
-    color: colors.green,
+    color: colors.black,
     fontFamily: 'quicksand-regular',
     fontSize: 14,
     marginTop: 8,
