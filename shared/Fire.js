@@ -28,11 +28,36 @@ class Fire {
                 firebase
                     .auth()
                     .signInAnonymously()
-                    .catch(error => { 
+                    .catch(error => {
                         callback(error)
                     })
             }
         })
+    }
+
+    getLists(callback) {
+        let ref = firebase
+            .firestore()
+            .collection('users')
+            .doc(this.userID)
+            .collection('lists');
+
+        this.unsubscribe = ref.onSnapshot(snapshot => {
+            lists = [];
+
+            snapshot.forEach(doc => {
+                lists.push({ id: doc.id, ...doc.data() });
+            });
+            callback(lists);
+        });
+    }
+
+    get userID() {
+        return firebase.auth().currentUser.uid
+    }
+
+    detach() {
+        this.unsubscribe();
     }
 }
 

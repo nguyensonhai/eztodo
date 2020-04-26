@@ -25,7 +25,7 @@ export default tempData = [
     {
         id: 2,
         name: 'Errands',
-        color: '#333333',
+        color: '#24A6D9',
         todos: [
             {
                 title: 'Buy Milk',
@@ -46,6 +46,33 @@ export default tempData = [
             {
                 title: 'Take Dog for a walk',
                 completed: false
+            },
+        ]
+    },
+    {
+        id: 3,
+        name: 'EDM Friday',
+        color: '#595BD9',
+        todos: [
+            {
+                title: 'Back To You',
+                completed: true
+            },
+            {
+                title: 'Out Of Town',
+                completed: true
+            },
+            {
+                title: 'Tragic',
+                completed: true
+            },
+            {
+                title: 'All On Me',
+                completed: true
+            },
+            {
+                title: 'Secrets',
+                completed: true
             },
         ]
     }
