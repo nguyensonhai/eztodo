@@ -22,7 +22,7 @@ export default tempData = [
         ]
     },
     {
-        name: 'Buy Somthing',
+        name: 'Buy Something',
         color: '#8022D9',
         todos: [
             {
