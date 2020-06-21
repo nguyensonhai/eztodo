@@ -14,16 +14,12 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "android": {
       "package": "com.eztech.eztodo",
       "versionCode": 1
     },
-    "description": "Created by NERØ",
+    "description": "Developed by NERØ",
     "githubUrl": "https://github.com/nguyensonhai/eztodo"
   }
 }
