@@ -1,4 +1,4 @@
-# <img src="/src/assets/icons.png" width="40"> EZ TODO
+# <img src="/src/assets/icon.png" width="40"> EZ TODO
 
 ---
 
